@@ -1,3 +1,5 @@
+# Time Tracking Assistant
+
 **AI‑powered time tracking that highlights *value*, not just hours.**  
 Runs securely, observes opt‑in work signals, and drafts concise “value entries” you can confirm or quick‑add at day’s end.
 

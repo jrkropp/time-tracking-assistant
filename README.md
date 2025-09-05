@@ -26,6 +26,7 @@ Runs securely, observes opt‑in work signals, and drafts concise “value entri
 - [Privacy & security](#privacy--security-principles)
 - [Roadmap](#roadmap)
 - [Status](#status)
+- [Development setup](#development-setup)
 - [License & contributing](#license--contributing)
 
 ---
@@ -137,6 +138,25 @@ Early days. The goal is to **reduce friction** while **raising the quality** of 
 This app isn’t about counting hours. It’s about **surfacing impact**, **keeping you accountable**, and **making the invisible value of your work visible**.
 
 ---
+
+## Development setup
+
+1. Copy the example environment file:
+   ```sh
+   cp .env.example .env
+   ```
+2. Build and start the containers:
+   ```sh
+   docker compose up --build
+   ```
+3. Verify the database is accepting connections:
+   ```sh
+   docker compose exec db psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\l"
+   ```
+4. Stop the stack:
+   ```sh
+   docker compose down
+   ```
 
 ## License & contributing
 

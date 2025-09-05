@@ -35,7 +35,7 @@ That’s a **subtle but powerful mindset shift**: from *accounting for time spen
 
 ---
 
-|                        | Hours‑first tools | **This app (value‑first)** |
+|                        | Hours‑first tools (e.g., Toogl) | **This app (value‑first)** |
 |------------------------|-------------------|----------------------------|
 | Primary focus          | Time spent        | Outcome delivered          |
 | Entry style            | Activity log      | Concise value statement    |

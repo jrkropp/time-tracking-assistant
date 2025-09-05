@@ -89,6 +89,19 @@ This app is for people who want software that is **constantly hunting for the va
 
 ---
 
+## Roadmap
+
+### Phase 1 — Quick Add MVP
+The first release focuses on **Quick Add**:  
+- Manually type or paste what you did (task, email, resolution notes).  
+- The app saves it as a **draft entry** in your queue.  
+- You can **edit, tag, and categorize** entries.  
+- At day’s end, review your queue to confirm or discard items.  
+
+This phase proves the **core value-entry workflow** (capture → edit → confirm), before adding AI assists or automatic integrations.  
+
+---
+
 ## Status
 
 Early days. The goal is to **reduce friction** while **raising the quality** of time notes—centered on *value delivered*.

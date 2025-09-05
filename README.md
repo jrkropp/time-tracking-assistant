@@ -35,15 +35,6 @@ That’s a **subtle but powerful mindset shift**: from *accounting for time spen
 
 ---
 
-|                        | Hours‑first tools (e.g., Toogl) | **This app (value‑first)** |
-|------------------------|-------------------|----------------------------|
-| Primary focus          | Time spent        | Outcome delivered          |
-| Entry style            | Activity log      | Concise value statement    |
-| Daily workflow         | Start/stop & tag  | Review & confirm suggestions |
-| What gets published    | Everything logged | Only what you approve      |
-
----
-
 ## Who this app is for
 
 - **Consultants / MSPs / IT / Engineering** who need client‑safe, outcome‑led notes.  

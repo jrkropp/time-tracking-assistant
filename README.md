@@ -93,20 +93,8 @@ This app is for people who want software that is **constantly hunting for the va
 ## Privacy & security (principles)
 
 - **User control first.** You decide which signals are enabled and what gets published.  
-- **Local‑first mindset.** Designed to run securely on your machine; no raw artifacts are shared without your say‑so.  
 - **AI optional.** Bring your own key (BYOK) if you want AI assists, or run with AI off for a local‑only experience.  
 - **Redaction by default.** PII and sensitive identifiers can be scrubbed from AI prompts and published entries.
-
----
-
-## Roadmap (high‑level)
-
-- **Desktop mode** for richer local signals (active app/file awareness).  
-- **End‑of‑day review UX** with bulk confirm/publish.  
-- **Light reports**: value distribution, beneficiary time, gap suggestions.  
-- **Integrations**: calendars, email, repos, ticketing/time systems.  
-- **Privacy controls**: per‑entry redaction, private artifacts, audit log.  
-- **AI helpers**: tighten wording, plain‑English rewrite, validation hints, confidence scoring.
 
 ---
 

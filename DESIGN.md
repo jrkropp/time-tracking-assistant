@@ -13,8 +13,6 @@ How this document is structured:
 
 # Design Decisions
 
----
-
 ## 1) What problem are we solving and what is the core user loop?
 
 **Answer**  

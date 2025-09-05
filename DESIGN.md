@@ -69,19 +69,7 @@ We help people produce concise, value‑first daily entries from their work “s
 
 ---
 
-## 4) How will users know there’s something to review if the app isn’t open?
-
-**Answer**  
-We notify users from the backend:
-- **Web Push** to the PWA (via service worker).
-- **Email** and/or **Teams** as reliable fallbacks.
-
-**Notes**  
-Service workers are event‑driven and short‑lived; they are not used for connector monitoring. They only wake to receive push and show notifications.
-
----
-
-## 5) How do we deploy, and where do secrets live?
+## 4) How do we deploy, and where do secrets live?
 
 **Decision**
 - Support **two modes**:
@@ -95,66 +83,9 @@ Service workers are event‑driven and short‑lived; they are not used for conn
 
 ---
 
-## 6) Do we capture OS‑level context or screens?
-
-**Decision**
-- **No screen recording.** It requires per‑use consent, cannot run persistently in the background, and conflicts with our privacy stance.
-- **OS‑level context** (frontmost app/window title/file path) is **deferred**. If data shows it improves drafts meaningfully, we’ll add a **small desktop companion** that sends **redacted** metadata with explicit user controls.
-
-**Why**
-- Stay aligned with user control, data minimization, and clear consent.
-- Don’t add privileged code until it proves real value.
-
----
-
-## 7) What is our privacy & security posture?
+## 5) What could go wrong, and how do we mitigate it?
 
 **Answer**
-- **User control**: opt‑in connectors and clear scopes.
-- **Data minimization**: store only what’s needed; link back to sources for provenance.
-- **Redaction by default**: run redaction at ingestion and before publishing.
-- **AI optional / BYOK**: users may disable AI assistance or provide their own key; keys are used only for their requests and usage is auditable.
-- **Least privilege**: thin client; backend uses narrowly scoped app permissions.
-- **Defense‑in‑depth**: signed webhooks, verified payloads, idempotent processing, rate‑limit/backoff, and audited access to secrets.
-
----
-
-## 8) What is in scope for v1?
-
-**Answer**
-- **PWA** for Today queue, Quick Add, edit/confirm/publish.
-- **Connectors**: Microsoft 365 (Calendar, Mail, Files recent), GitHub commits/issues/PRs (as needed).
-- **Draft generation**: rules‑first + optional LLM prompt.
-- **Notifications**: Web Push + email/Teams.
-- **Storage**: Postgres for entries, preferences, cursors/provenance; minimal content stored.
-
----
-
-## 9) What is explicitly out of scope for v1?
-
-**Answer**
-- Screen or keystroke recording.
-- Payroll‑grade timers; stopwatch‑style tracking.
-- Auto‑publishing without human confirmation.
-- OS‑level context capture (until the desktop companion ADR is accepted).
-
----
-
-## 10) What does success look like? (Acceptance criteria)
-
-**Answer**
-- A new user connects at least one connector and sees a populated **Today** queue within minutes.
-- Each draft is **≤45 words** and follows the **beneficiary + outcome** pattern, with visible source provenance.
-- Users can edit and confirm entries; **nothing** publishes without explicit confirmation.
-- Notifications reach the user even if no tab is open (push and/or email/Teams).
-- Redaction and BYOK toggles are visible and verifiably effective end‑to‑end.
-
----
-
-## 11) What could go wrong, and how do we mitigate it?
-
-**Answer**
-- **Push blocked or unreliable** → Always send **email/Teams** as a fallback.
 - **Local cache eviction (PWA)** → Keep the client stateless; server is the source of truth; explicit resync.
 - **Webhook outages / rate limits** → Use retry queues, exponential backoff, delta queries for catch‑up; idempotent upserts keyed by subscription/resource.
 - **Secrets leakage risk** → Use a secret manager; scoped env injection; rotate keys; never log secrets.
@@ -162,7 +93,7 @@ Service workers are event‑driven and short‑lived; they are not used for conn
 
 ---
 
-## 12) When do we revisit the desktop decision?
+## 6) When do we revisit the desktop decision?
 
 **Answer**
 Add a **browser extension** when ≥25% of active users adopt quick‑add workflows that are hindered by the lack of a hotkey.  
@@ -170,7 +101,7 @@ Build a **desktop companion** when A/B tests show native signals increase draft 
 
 ---
 
-## 13) High‑level architecture (for context)
+## 7) High‑level architecture (for context)
 
 **Answer**
 - **PWA (React/TS)** → Auth, Today queue, Quick Add, edit/confirm.
